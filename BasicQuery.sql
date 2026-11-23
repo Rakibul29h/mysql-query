@@ -197,3 +197,62 @@ SELECT * FROM programmers;
 
 -- add a column to a table
 ALTER TABLE programmers ADD COLUMN is_active BOOLEAN DEFAULT true;
+
+-- Drop a column from a table
+ALTER TABLE programmers DROP COLUMN is_active;
+
+-- Modify a column type
+ALTER TABLE programmers MODIFY COLUMN name VARCHAR(150);
+
+
+-- This make the email column after the id column
+ALTER TABLE programmers MODIFY COLUMN email VARCHAR(100) AFTER id;
+
+-- This make the first column date_of_birth
+ALTER TABLE programmers MODIFY COLUMN date_of_birth DATETIME FIRST;
+
+SELECT * FROM programmers
+
+
+
+-- Insert value 
+INSERT INTO programmers VALUES 
+(1,'Rakibul','rakibul3w2@gmail.com','Male',DEFAULT,'2005-11-12');
+
+INSERT INTO programmers(id,name,email,gender,date_of_birth) VALUES
+    (2,'Dipu','Dipu@tipu.com','Male','2003-12-12');
+
+
+-- Insert multiple data
+INSERT INTO programmers(name,email,gender,date_of_birth) VALUES
+    ('Dipu2','Dipu@2tipu.com','Male','2003-12-12'),
+    ('Dipu3','Dipu@t3ipu.com','Male','2003-12-12');
+
+-- Select specific query <> means not equal
+SELECT * FROM users WHERE gender <> 'Male';
+
+-- select where gender = Male
+SELECT * FROM users WHERE gender = 'Male';
+
+-- We can not say that =NULL so we say
+SELECT * FROM users WHERE date_of_birth IS NULL;
+
+SELECT * FROM users WHERE date_of_birth IS NOT NULL;
+
+-- This gives value between 
+SELECT * FROM users WHERE date_of_birth BETWEEN '1990-09-09' AND '1999-09-09';
+
+-- For String 
+
+SELECT * FROM users WHERE gender in ('Male','Female');
+-- Logical And
+SELECT * FROM users WHERE gender = 'Female' AND salary >'70000'
+-- Logical Or
+SELECT * FROM users WHERE gender= 'Male' OR salary < '60000';
+-- Sort asc in feild date-of-birth
+SELECT * FROM users WHERE gender= 'Male' OR salary < '60000' ORDER BY date_of_birth ASC;
+-- sort desc in feild date-o-birth
+SELECT * FROM users WHERE gender= 'Male' OR salary < '60000' ORDER BY date_of_birth DESC;
+
+-- Show only 5 entities
+SELECT * FROM users WHERE gender= 'Male' OR salary < '60000' ORDER BY date_of_birth ASC LIMIT 5;
