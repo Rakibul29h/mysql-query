@@ -256,3 +256,12 @@ SELECT * FROM users WHERE gender= 'Male' OR salary < '60000' ORDER BY date_of_bi
 
 -- Show only 5 entities
 SELECT * FROM users WHERE gender= 'Male' OR salary < '60000' ORDER BY date_of_birth ASC LIMIT 5;
+
+-- Update a data
+-- Here if we don't use where then the change affect all the row
+UPDATE users SET salary = 45000, email='raj@google.com' WHERE id=3;
+
+SELECT * FROM  users WHERE id=3;
+
+
+
