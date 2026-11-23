@@ -186,3 +186,14 @@ DROP DATABASE practiseMySql;
 -- =====================================================
 --              END OF REFERENCE NOTE
 -- =====================================================
+
+-- Rename a table name
+
+RENAME TABLE users to programmers;
+
+-- Select all feild from a table
+
+SELECT * FROM programmers;
+
+-- add a column to a table
+ALTER TABLE programmers ADD COLUMN is_active BOOLEAN DEFAULT true;
