@@ -263,5 +263,10 @@ UPDATE users SET salary = 45000, email='raj@google.com' WHERE id=3;
 
 SELECT * FROM  users WHERE id=3;
 
+-- Delete a row
 
+DELETE FROM users WHERE salary<40000
+
+-- Add Constraint
+ALTER TABLE users ADD CONSTRAINT unique_created_at UNIQUE(created_at)
 
